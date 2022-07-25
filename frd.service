@@ -1,0 +1,13 @@
+[Unit]
+Description=Start frd-r4-arm server 
+After=network.target
+
+[Service]
+WorkingDirectory=/home/frade/frd-r4-arm
+Environment=NODE_PORT=3000
+User=frade
+ExecStart=/home/frade/.nvm/versions/node/v16.16.0/bin/node /home/frade/frd-r4-arm/server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
